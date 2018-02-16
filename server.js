@@ -11,6 +11,8 @@ app.get('/', function (req, res) {
 });
 
 var articles = {
+    
+    
     articleOne: {
         title: 'Article one',
         heading: 'Article one',
@@ -19,6 +21,8 @@ var articles = {
 
      this is arcticle one this is arcticle one this is arcticle one this is arcticle one </p> `
     },
+    
+    
     articleTwo: {
         title: 'Article two',
         heading: 'Article two',
@@ -28,6 +32,8 @@ var articles = {
      </p> `
 
     },
+    
+    
 
 
     articleThree :{
