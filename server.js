@@ -11,10 +11,49 @@ app.get('/', function (req, res) {
 });
 
 
+var articleOne ={
+    title:'Article one',
+    heading:'Article one',
+    date :' 16 feb 2018',
+    content :`<p class="container">    this is arcticle one    
+
+     this is arcticle one this is arcticle one this is arcticle one this is arcticle one </p> ` 
+};
+
+function createTemplate (data){
+    
+        var title = data.title;
+        var heading = data.heading;
+        var date = data.date;
+        var content = data.content;
+        
+        var htmltemplate=`<html>
+    <head>  <title>  ${title} </title>
+    <link href="ui/style.css" rel="stylesheet" /> 
+    
+    </head>
+    <body>
+        <div> 
+            <a href='/'>Home </a> 
+        </div>
+            <h3> ${heading}/h3>
+        <div > 
+            <p>  ${date}</p>
+        </div>
+       ${content}
+    </body>
+    </html> `;
+    
+        
+        return htmltemplate;
+    }
+
 
 
 app.get('/article-one', function (req , res){
-  res.sendFile(path.join(__dirname, 'ui','article-one.html'));
+  //res.sendFile(path.join(__dirname, 'ui','article-one.html'));
+  
+  res.send(createtemplate(data));
 });
 
 app.get('/article-two', function(req, res){
