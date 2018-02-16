@@ -22,7 +22,6 @@ var articles = {
      this is arcticle one this is arcticle one this is arcticle one this is arcticle one </p> `,
     },
     
-    
     'article-two': {
         title: 'Article two',
         heading: 'Article two',
@@ -32,9 +31,6 @@ var articles = {
      </p> `,
 
     },
-    
-    
-
 
     'article-three' :{
         title: 'Article three',
@@ -44,7 +40,7 @@ var articles = {
     },
 
 
-}
+};
 
 
 function createTemplate (data){
@@ -78,7 +74,7 @@ function createTemplate (data){
 
 
 app.get('/:articleName', function (req , res){
-var articleName=   req.param.articleName;
+var articleName=   req.params.articleName;
 
   res.send(createTemplate(articles[articleName]));
 });
