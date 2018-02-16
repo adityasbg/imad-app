@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 var articles = {
     
     
-    articleOne: {
+    article-one: {
         title: 'Article one',
         heading: 'Article one',
         date: ' 16 feb 2018',
@@ -23,7 +23,7 @@ var articles = {
     },
     
     
-    articleTwo: {
+    article-two: {
         title: 'Article two',
         heading: 'Article two',
         date: ' 17 feb 2018',
@@ -36,7 +36,7 @@ var articles = {
     
 
 
-    articleThree :{
+    article-three :{
         title: 'Article three',
         heading: 'Article three',
         date: ' 16 feb 2018',
