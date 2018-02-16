@@ -53,7 +53,7 @@ function createTemplate (data){
 app.get('/article-one', function (req , res){
   //res.sendFile(path.join(__dirname, 'ui','article-one.html'));
   
-  res.send(createtemplate(data));
+  res.send(createTemplate(data));
 });
 
 app.get('/article-two', function(req, res){
