@@ -4,6 +4,7 @@ var path = require('path');
 
 var app = express();
 var Pool =require('pg').Pool;
+
 var config ={
     user:'adityaghoshsbg',
     database :'adityaghoshsbg',
@@ -20,6 +21,7 @@ app.get('/', function (req, res) {
     
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
 
 var articles = {
     
@@ -81,7 +83,7 @@ function createTemplate (data){
     }
     
     
-    app.get('/:articleName', function (req , res){
+app.get('/:articleName', function (req , res){
 var articleName=   req.params.articleName;
 
   res.send(createTemplate(articles[articleName]));
@@ -91,6 +93,7 @@ var articleName=   req.params.articleName;
 
 
 var pool = new Pool(config);
+
 app.get('/test-db' , function(req , res){
     //make a select request 
     // return a request 
