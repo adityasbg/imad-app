@@ -106,10 +106,27 @@ function createTemplate (data){
     }
     
     
-app.get('/:articleName', function (req , res){
-var articleName=   req.params.articleName;
+app.get('/articles/:articleName', function (req , res){
+//var articleName=   req.params.articleName;
 
-  res.send(createTemplate(articles[articleName]));
+ pool.query("select * from article where title="+res.param.articleName ,function(err , result ){
+    if(err){
+        res.status(500).send(err.tostring());
+    }
+    else{
+        if(result.lenght === 0){
+            
+            res.status(404).send("file not found ");
+        }
+        else {
+            articleData = result.rows[0];
+              res.send(createTemplate(articles[articleData]));
+        }
+    }
+    
+    });
+
+
 });
 
 
