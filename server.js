@@ -115,9 +115,9 @@ app.get('/articles/:articleName', function (req , res){
     }
     
     else{
-        if(result.lenght === 0){
+        if(result.rows.lenght === 0){
             
-            res.status(404).send("file not found ");
+            res.status(404).send("file not found");
         }
         else {
             articleData = result.rows[0];
