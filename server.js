@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var app = express();
+
 var Pool =require('pg').Pool;
 
 var config ={
@@ -13,6 +13,7 @@ var config ={
     password:'db-adityaghoshsbg-72927'
 };
 
+var app = express();
 app.use(morgan('combined'));
 
 
@@ -78,7 +79,6 @@ function createTemplate (data){
     </body>
     </html> `;
     
-        
         return htmltemplate;
     }
     
