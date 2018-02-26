@@ -21,6 +21,69 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var articles = {
+    
+    
+   'article-one': {
+        title: 'Article one',
+        heading: 'Article one',
+        date: ' 16 feb 2018',
+        content: `<p class="container">    this is arcticle one    
+     this is arcticle one this is arcticle one this is arcticle one this is arcticle one </p> `,
+    },
+    
+    'article-two': {
+        title: 'Article two',
+        heading: 'Article two',
+        date: ' 17 feb 2018',
+        content: `<p class="container">    this is arcticle two    this is arcticle two  this is arcticle two  this is arcticle two  this is arcticle two  this is arcticle two   
+     </p> `,
+
+    },
+
+    'article-three' :{
+        title: 'Article three',
+        heading: 'Article three',
+        date: ' 16 feb 2018',
+        content: `<p class="container">    Article threeArticle threeArticle threeArticle threeArticle three </p> `,
+    },
+
+
+};
+
+
+function createTemplate (data){
+    
+        var title = data.title;
+        var heading = data.heading;
+        var date = data.date;
+        var content = data.content;
+        
+        var htmltemplate=`<html>
+    <head>  <title>  ${title} </title>
+    <link href="ui/style.css" rel="stylesheet" /> 
+    
+    </head>
+    <body>
+        <div> 
+            <a href='/'>Home </a> 
+        </div>
+            <h3> ${heading}</h3>
+        <div > 
+            <p>  ${date}</p>
+        </div>
+       ${content}
+    </body>
+    </html> `;
+    
+        
+        return htmltemplate;
+    }
+    
+    
+    
+    
+    
 
 
 var pool = new Pool(config);
