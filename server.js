@@ -47,35 +47,7 @@ app.get('/test-db' , function(req , res){
     
 });
 
-var articles = {
-    
-    
-   'article-one': {
-        title: 'Article one',
-        heading: 'Article one',
-        date: ' 16 feb 2018',
-        content: `<p class="container">    this is arcticle one    
-     this is arcticle one this is arcticle one this is arcticle one this is arcticle one </p> `,
-    },
-    
-    'article-two': {
-        title: 'Article two',
-        heading: 'Article two',
-        date: ' 17 feb 2018',
-        content: `<p class="container">    this is arcticle two    this is arcticle two  this is arcticle two  this is arcticle two  this is arcticle two  this is arcticle two   
-     </p> `,
 
-    },
-
-    'article-three' :{
-        title: 'Article three',
-        heading: 'Article three',
-        date: ' 16 feb 2018',
-        content: `<p class="container">    Article threeArticle threeArticle threeArticle threeArticle three </p> `,
-    },
-
-
-};
 
 
 function createTemplate (data){
@@ -111,7 +83,7 @@ function createTemplate (data){
 app.get('/articles/:articleName', function (req , res){
 //var articleName=   req.params.articleName;
 
- pool.query("select * from article where title = $1",[req.params.articleName], function(err , result ){
+ pool.query("select * from article where title =$1",[req.params.articleName], function(err , result ){
     if(err){
         res.status(500).send(err.toString());
     }
